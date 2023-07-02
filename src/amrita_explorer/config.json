@@ -1,0 +1,9 @@
+{
+	"network-configs": {
+		"amrita-test-network": {
+			"name": "Amrita Test Network",
+			"profile": "./connection-profile/amrita-test-network.json"
+		}
+	},
+	"license": "Apache-2.0"
+}

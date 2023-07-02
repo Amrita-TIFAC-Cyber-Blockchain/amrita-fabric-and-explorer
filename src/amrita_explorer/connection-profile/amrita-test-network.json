@@ -1,0 +1,56 @@
+{
+	"name": "amrita-test-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.org1.amrita.edu": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org1.amrita.edu/users/Admin@org1.amrita.edu/msp/keystore/priv_sk"
+			},
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org1.amrita.edu/users/Admin@org1.amrita.edu/msp/signcerts/Admin@org1.amrita.edu-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org1.amrita.edu": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org1.amrita.edu/peers/peer0.org1.amrita.edu/tls/ca.crt"
+			},
+			"url": "grpcs://localhost:7051"
+		}
+	}
+}
